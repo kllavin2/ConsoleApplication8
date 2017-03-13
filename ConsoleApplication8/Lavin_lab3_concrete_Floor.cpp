@@ -11,6 +11,7 @@ This program simulates the purchase of a concrete floor.
 #include<string>
 #include<math.h>
 #include<iomanip>
+
 using namespace std;
 
 const double Pi = 3.14;//Pi
@@ -38,20 +39,29 @@ void goodBye();//Ends the program
 
 int main()
 {
-	string name;
-	string	phoneNumber;
+	string again; //Asks if they want a new quote
+	string name;//User name
+	string	phoneNumber;//user phone number
+
+	//Get the floor shape choice
+
+
 	
 	welcome();
 	getInfo(name, phoneNumber);
 	
-
-	//Step 3: Do while loop; end before the last function call which will say goodbye.
+	do
+	{
+		selectShape();
+	} while (again=="Y" || again=="y"||again=="Yes"||again=="yes");
+	
 	//Step 5: Use an if/else statement to call functions that will:
 	//Get the dimension of the floor and calc sq ft
 	/*
 	Ask if they want another esitmate. Yes:Begin with selecting floor shape, etc.
 	If No: the do/while loop ends and a goodby function is called
 	*/
+	goodBye();
 	system("Pause");
 	return 0;
 
@@ -69,12 +79,48 @@ void getInfo(string &customerName, string &customerPhoneNumber)//Get the custome
 	
 	cout << "Please enter your full name: " << endl;
 	getline(cin, customerName);
+	while (customerName.size()<3 || customerName.size()>50000000)
+	{
+		cout << "Please enter a valid name.\n";
+		cout << "Please enter your full name: " << endl;
+		getline(cin, customerName);
+	}
+
 	cout << "Please enter your telephone number: (ex:555.555.5555)" << endl;
-	getline(cin,customerPhoneNumber);
+	getline(cin, customerPhoneNumber);
+	while (customerPhoneNumber.size()<10 || customerPhoneNumber.size()>12)
+	{
+		cout << "Please enter a valid telephone number : (ex:555.555.5555)\n";
+		getline(cin, customerPhoneNumber);
+	}
+	
 }
 
 int selectShape()
 {
+	int choice;
+	do
+	{
+		cout << "\tEstimate\t\n";
+		cout << "To describe the shape of the floor, please select shape 1 or 2:\n";
+		cout << "1. Rectangular\n";
+		cout << "2. Circular\n";
+		cin >> choice;
+		if (choice != 1 || choice != 2)
+		{
+			cout << "The choice you have selected is incorrect please try again.\n";
+			continue;
+		}
+		else if (choice==1)
+		{
+			cout << " ";
+		}
+
+	} while (true);
+	
+
+
+
 //Steps 4:A menu is presented. The user selects the shape of the floor (rec or circ).
 //Use local variables and return the variable back to the main function 
 //If the customer selects the get another estimate menu option, 
