@@ -1,0 +1,8 @@
+﻿-------- Edit and Continue build started --------
+
+Lavin_Lab7.cpp
+c:\users\kristi\documents\visual studio 2015\projects\lavin_lab7\lavin_lab7\lavin_lab7.cpp(20): warning C4656: 'Author': data type is new or has changed since the latest build, or is defined differently elsewhere
+c:\users\kristi\documents\visual studio 2015\projects\lavin_lab7\lavin_lab7\lavin_lab7.cpp(28): fatal error C1092: Edit and Continue does not support changes to data types; build required
+Project : error (null) : Build errors occurred.
+--------------------- Done ----------------------
+
